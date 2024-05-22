@@ -1,0 +1,111 @@
+# Operating System files
+**/.DS_Store
+**/Thumbs.db
+
+# Node.js
+**/node_modules/
+**/npm-debug.log
+**/yarn-error.log
+
+# Python
+**/__pycache__/
+**/*.py[cod]
+**/*.pyo
+**/*.pyd
+**/*.egg-info/
+**/dist/
+**/build/
+**/*.egg
+**/*.log
+**/*.pot
+**/*.mo
+**/*.cache
+**/*.coverage
+**/.pytest_cache/
+**/.tox/
+
+# Java
+**/*.class
+**/*.jar
+**/*.war
+**/*.ear
+**/*.iml
+**/*.ipr
+**/*.iws
+**/target/
+**/build/
+
+# C/C++
+**/*.out
+**/*.o
+**/*.a
+**/*.so
+**/*.exe
+**/*.dSYM/
+**/*.dylib
+
+# Ruby
+**/*.gem
+**/*.rbc
+**/.bundle/
+**/vendor/bundle/
+**/*.log
+**/tmp/
+
+# Go
+**/bin/
+**/pkg/
+
+# PHP
+**/vendor/
+**/*.log
+**/*.cache
+
+# .NET
+**/bin/
+**/obj/
+**/*.pdb
+**/*.user
+**/*.exe
+**/*.dll
+**/*.cache
+**/*.config
+**/.vs/
+**/.vscode/
+
+# IDEs
+**/.vscode/
+**/.idea/
+**/*.iml
+**/*.iws
+**/*.ipr
+
+# Environment variables
+**/.env
+
+# Logs
+**/*.log
+
+# Build Artifacts
+**/*.pid
+**/*.seed
+**/*.pid.lock
+**/*.log
+**/*.lock
+**/*.ts
+**/*.gz
+**/*.bz2
+**/*.xz
+**/*.7z
+**/*.swp
+**/*.swo
+**/*.bak
+**/*.swm
+
+# Deployment
+**/.dockerignore
+**/Dockerfile
+
+# CI/CD configurations
+**/.travis.yml
+**/.circleci/
