@@ -1,7 +1,7 @@
 const querystring = require('querystring');
 const http = require('http');
 const { handleRequest } = require('./endpoints');
-const { colors } = require('./colors.js');
+const { colors } = require('../config.js');
 
 
 http.createServer((req, res) => {
