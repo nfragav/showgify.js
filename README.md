@@ -14,7 +14,7 @@
 Welcome to Showgify, a side project with the purpose of building a nicer home-space for developers around the world! The main goal of this project is make people able to use any old computer and convert it into a GIF display! This is like having a painting at home but in 2049. So, you know the drill, if you lookin' lonely, we can fix that!
 
 <p align="center">
-  <img src="docs/media/you_look_lonely.gif" alt="I can fix that"/>
+  <img src="docs/media/you_look_lonely.gif" alt="I can fix that" width="100%"/>
 </p>
 
 How can this be easily achieved? Well, most people have a rusty old computer that they have no use for. Whereas this being a lightweight project with low requirements, having an HDMI display and a computer able to install `Node.js`and a general purpose browser to open up an `index.html` file will be enough to run the project. The idea is to need less hardware in the future. It's not difficult to think that using a full-size computer to show a GIF is much of an *overkill*.
