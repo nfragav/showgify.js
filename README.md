@@ -32,16 +32,25 @@ git clone https://github.com/nfragav/showgify.js.git
 
 ### OS instructions
 
-#### MacOS
+For any OS, the only step you will have to follow is installing node. 
 
-Install node
-~~~
-brew install node
-~~~
+- **MacOS:** Run `brew install node` in your terminal.
 
 ### Running the server
 
-You just step in the repo's directory and run `node server/index.js` and you'll be serving the API in port `3000` (for the moment).
+You just move to the `server/` folder at this repo
+
+~~~
+cd server
+~~~
+
+and then, you run the server
+
+~~~
+node index.js
+~~~
+
+As quick as that, you'll be serving the API in port `3000`.
 
 Then, you open the `display/index.html` file. You'll be displaying the GIFs. The project comes with some GIF file examples, but you can add new ones at `display/gifs/`.
 
