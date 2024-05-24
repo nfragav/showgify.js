@@ -2,12 +2,12 @@
 
 ### Table of Contents
 1. [Description](#description-eyes)
-2. [Setup Guide](#setup-guidegear)
-    - [OS Instructions](#os-instructionspenguin)
-    - [Running the Server](#running-the-serverlaptop)
-    - [Setting a URL](#setting-a-urlglobe_with_meridians)
-3. [Weaknesses](#weaknesseschart_decreasing)
-4. [Next Steps](#next-stepsmemo)
+2. [Setup Guide](#setup-guide-gear)
+    - [OS Instructions](#os-instructions-penguin)
+    - [Running the Server](#running-the-server-laptop)
+    - [Setting a URL](#setting-a-url-globe_with_meridians)
+3. [Weaknesses](#weaknesses-chart_decreasing)
+4. [Next Steps](#next-steps-memo)
 
 
 ## Description :eyes:
@@ -24,18 +24,18 @@ Why did I start with this side-project? Some days ago (today being may 23) I vis
 
 If you're reading this, thanks for the interest! I hope you like this project and feel free to contribute yourself! The main codebase was made within a day's work, so I'm well-aware that it could use some improvements, whether it's in code practices, architecture design or hardware and software setup!
 
-## Setup Guide:gear:
+## Setup Guide :gear:
 
 First off, you must clone this repo
 ~~~
 git clone https://github.com/nfragav/showgify.js.git
 ~~~
 
-### OS Instructions:penguin:
+### OS Instructions :penguin:
 
 For your preferred OS, your just have to install node.js following [this guide](https://nodejs.org/en/download/package-manager).
 
-### Running the Server:laptop:
+### Running the Server :laptop:
 
 You just move to the `server/` folder at this repo
 
@@ -53,19 +53,19 @@ As quick as that, you'll be serving the API in port `3000`.
 
 Then, you open the `display/index.html` file. You'll be displaying the GIFs. The project comes with some GIF file examples, but you can add new ones at `display/gifs/`.
 
-### Setting a URL:globe_with_meridians:
+### Setting a URL :globe_with_meridians:
 
 To lift in an easy way a URL, you can use Visual Studio Code's port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
 
 All you need to *showgify* is installing into your computer `Node v22.0` and have a general purpose browser to manually show the `index.html` file at the `display/` folder. Also, if you're keen on controlling the display through a browser, installing `VSCode` will surely do it. Whereas, the instructions are the following, for each OS:
 
-## Features and [API documentation](docs/api_documentation.md):page_facing_up:
+## Features and [API documentation](docs/api_documentation.md) :page_facing_up:
 
 Given that for the moment this is a little project, the API documentation will be shown in [a file in this same repository](docs/api_documentation.md).
 
 For the moment, this project consists in a single-direction slider of GIFs via an HTML file. The project includes a server that provides an API the following urls: `/next`, `/current`. With these functions, you can get the name of the current GIF file being displayed and command the server to slide to the next GIF, changing the file displayed at `display/index.html`.
 
-## Weaknesses:chart_decreasing:
+## Weaknesses :chart_decreasing:
 
 The weaknesses that could be tackled to make this project better are the following:
 - Needs a browser to open `display/index.html` file. It could possibly be solver by installing a low-demanding browser or adding a visual feature via `node`. Any solution must be reached without using `npm` or any package manager of node.
@@ -73,7 +73,7 @@ The weaknesses that could be tackled to make this project better are the followi
 - Security issues regarding URL haven't been addressed.
 - It requires managing a URL, which can complicate things. Other technologies such as Bluetooth could achieve the same purpose.
 
-## Next Steps:memo:
+## Next Steps :memo:
 
 - Find a cheap board compatible with a decent size display to make the setup of the project.
 - Create a `/previous` method to slide to the previous GIF of the list, at `display/gifs/` folder.
