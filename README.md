@@ -3,9 +3,9 @@
 ### Table of Contents
 1. [Description](#description)
 2. [Setup Guide](#setup-guide)
-    - [Linux](#linux)
-    - [Windows](#windows)
-    - [MacOS](#macos)
+    - [OS Instructions](#os-instructions)
+    - [Running the Server](#running-the-server)
+    - [Setting a URL](#setting-a-url)
 3. [Weaknesses](#weaknesses)
 4. [Next Steps](#next-steps)
 
@@ -30,13 +30,11 @@ First off, you must clone this repo
 git clone https://github.com/nfragav/showgify.js.git
 ~~~
 
-### OS instructions
+### OS Instructions
 
-For any OS, the only step you will have to follow is installing node. 
+For your preferred OS, your just have to install node.js following [this guide](https://nodejs.org/en/download/package-manager).
 
-- **MacOS:** Run `brew install node` in your terminal.
-
-### Running the server
+### Running the Server
 
 You just move to the `server/` folder at this repo
 
@@ -54,7 +52,7 @@ As quick as that, you'll be serving the API in port `3000`.
 
 Then, you open the `display/index.html` file. You'll be displaying the GIFs. The project comes with some GIF file examples, but you can add new ones at `display/gifs/`.
 
-### URL
+### Setting a URL
 
 To lift in an easy way a URL, you can use Visual Studio Code's port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
 
