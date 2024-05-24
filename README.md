@@ -1,7 +1,7 @@
 # Showgify.js
 
 ### Table of Contents
-1. [Description](#descriptioneyes)
+1. [Description](#description-eyes)
 2. [Setup Guide](#setup-guidegear)
     - [OS Instructions](#os-instructionspenguin)
     - [Running the Server](#running-the-serverlaptop)
@@ -10,7 +10,7 @@
 4. [Next Steps](#next-stepsmemo)
 
 
-## Description:eyes:
+## Description :eyes:
 
 Welcome to Showgify, a Vanilla JS project with the purpose of building a nicer home-space for developers around the world! No `npm` or external libraries needed, just `node` and a functioning browser. The main goal of this project is make people able to use any old computer and convert it into a GIF display! This is like having a painting at home but in 2049. So, you know the drill, if you lookin' lonely, we can fix that!
 
