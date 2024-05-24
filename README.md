@@ -6,7 +6,7 @@
     - [OS Instructions](#os-instructions-penguin)
     - [Running the Server](#running-the-server-laptop)
     - [Setting a URL](#setting-a-url-globe_with_meridians)
-3. [Weaknesses](#weaknesses-chart_decreasing)
+3. [Weaknesses](#weaknesses-)
 4. [Next Steps](#next-steps-memo)
 
 
@@ -65,7 +65,7 @@ Given that for the moment this is a little project, the API documentation will b
 
 For the moment, this project consists in a single-direction slider of GIFs via an HTML file. The project includes a server that provides an API the following urls: `/next`, `/current`. With these functions, you can get the name of the current GIF file being displayed and command the server to slide to the next GIF, changing the file displayed at `display/index.html`.
 
-## Weaknesses :chart_decreasing:
+## Weaknesses 📉
 
 The weaknesses that could be tackled to make this project better are the following:
 - Needs a browser to open `display/index.html` file. It could possibly be solver by installing a low-demanding browser or adding a visual feature via `node`. Any solution must be reached without using `npm` or any package manager of node.
