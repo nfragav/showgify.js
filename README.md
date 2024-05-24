@@ -56,7 +56,7 @@ Then, you open the `display/index.html` file. You'll be displaying the GIFs. The
 
 ### URL
 
-To lift in an easy way a URL, you can use the port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
+To lift in an easy way a URL, you can use Visual Studio Code's port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
 
 All you need to *showgify* is installing into your computer `Node v22.0` and have a general purpose browser to manually show the `index.html` file at the `display/` folder. Also, if you're keen on controlling the display through a browser, installing `VSCode` will surely do it. Whereas, the instructions are the following, for each OS:
 
