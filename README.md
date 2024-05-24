@@ -33,7 +33,7 @@ git clone https://github.com/nfragav/showgify.js.git
 
 ### OS Instructions :penguin:
 
-For your preferred OS, your just have to install node.js following [this guide](https://nodejs.org/en/download/package-manager).
+For your preferred OS, you just have to install `node.js` following [this guide](https://nodejs.org/en/download/package-manager).
 
 ### Running the Server :laptop:
 
