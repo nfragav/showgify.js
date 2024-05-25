@@ -39,13 +39,28 @@ const fmCurrentGifInfo = async () => {
     return {gif, width, height}
 }
 
+const fmSlidePreviousGif = async () => {
+  const [currentlyDisplayed] = fs.readdirSync(dirs.displayed).filter(() => /\.gif$/);
+  const gifs = fs.readdirSync(dirs.gifs, 'utf8').filter(() => /\.gif$/);
+  let [nextGif] = gifs;
+  if (currentlyDisplayed) {
+      const currentIndex = gifs.indexOf(currentlyDisplayed);
+      nextGif = gifs[(currentIndex - 1 + gifs.length) % gifs.length];
+      await deleteFile(`${dirs.displayed}${currentlyDisplayed}`);
+  }
+  fs.copyFileSync(`${dirs.gifs}${nextGif}`, `${dirs.displayed}${nextGif}`);
+  const gifBin = fs.readFileSync(`${dirs.displayed}${nextGif}`);
+
+  return { gifBin };
+}
+
 const fmSlideNextGif = async () => {
   const [currentlyDisplayed] = fs.readdirSync(dirs.displayed).filter(() => /\.gif$/);
   const gifs = fs.readdirSync(dirs.gifs, 'utf8').filter(() => /\.gif$/);
   let [nextGif] = gifs;
   if (currentlyDisplayed) {
-      const index = gifs.indexOf(currentlyDisplayed);
-      nextGif = gifs[(index + 1) % gifs.length];
+      const currentIndex = gifs.indexOf(currentlyDisplayed);
+      nextGif = gifs[(currentIndex + 1) % gifs.length];
       await deleteFile(`${dirs.displayed}${currentlyDisplayed}`);
   }
   fs.copyFileSync(`${dirs.gifs}${nextGif}`, `${dirs.displayed}${nextGif}`);
@@ -55,4 +70,4 @@ const fmSlideNextGif = async () => {
 }
 
 
-module.exports = { fmCurrentGifInfo, fmSlideNextGif }
+module.exports = { fmCurrentGifInfo, fmSlidePreviousGif, fmSlideNextGif }

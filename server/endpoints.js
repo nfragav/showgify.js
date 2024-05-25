@@ -1,5 +1,5 @@
 const { endpointMiddleware } = require('./helpers');
-const { fmCurrentGifInfo, fmSlideNextGif } = require('../services/fileManager.js')
+const { fmCurrentGifInfo, fmSlidePreviousGif, fmSlideNextGif } = require('../services/fileManager.js')
 const { colors } = require('../config.js');
 
 
@@ -16,22 +16,25 @@ const getCurrentGifInfo = async () => {
     });
 }
 
+const getPreviousGifBin = async () => {
+    const { gifBin } = await fmSlidePreviousGif();
+    return gifBin;
+}
+
 const getNextGifBin = async () => {
     const { gifBin } = await fmSlideNextGif();
     return gifBin;
 }
 
-const postGifHandler = endpointMiddleware(postGif)(201, 'text/html');
-const getNextGifBinHandler = endpointMiddleware(getNextGifBin)(200, 'image/gif');
 const getCurrentGifHandler = endpointMiddleware(getCurrentGifInfo)(200, 'text/html');
+const getPreviousGifBinHandler = endpointMiddleware(getPreviousGifBin)(200, 'image/gif');
+const getNextGifBinHandler = endpointMiddleware(getNextGifBin)(200, 'image/gif');
 
 const router = {
-    post: {
-        "/gif": postGifHandler,
-    },
     get: {
-        "/next": getNextGifBinHandler,
         "/current": getCurrentGifHandler,
+        "/previous": getPreviousGifBinHandler,
+        "/next": getNextGifBinHandler,
     }
 }
 
