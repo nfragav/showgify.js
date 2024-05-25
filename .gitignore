@@ -1,5 +1,6 @@
 # Project-concerned data
-
+/display/assets/displayed/*
+/display/assets/gifs/*
 
 # Operating System files
 **/.DS_Store
