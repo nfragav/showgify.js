@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
 const { colors } = require('../config.js');
+
 
 const endpointMiddleware = (endpoint) => (statusCode, contentType) => async (req, res) => {
   try{
@@ -19,24 +19,5 @@ const endpointMiddleware = (endpoint) => (statusCode, contentType) => async (req
   }
 }
 
-const getGIFDimensions = (buffer) => {
-  if (buffer.toString('ascii', 0, 3) !== 'GIF') {
-    throw new Error('Not a GIF file');
-  }
-  const width = buffer.readUInt16LE(6);
-  const height = buffer.readUInt16LE(8);
 
-  return { width, height };
-}
-
-const deleteFile = async (filePath) => {
-  try {
-    await fs.unlink(filePath);
-    console.log(colors.cyan, `File ${filePath} has been deleted.`);
-  } catch (err) {
-    console.error(colors.yellow, err);
-  }
-}
-
-
-module.exports = { endpointMiddleware, getGIFDimensions, deleteFile };
+module.exports = { endpointMiddleware };

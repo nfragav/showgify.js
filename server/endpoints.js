@@ -1,56 +1,37 @@
-const { endpointMiddleware, getGIFDimensions, deleteFile } = require('./helpers');
+const { endpointMiddleware } = require('./helpers');
+const { fmCurrentGifInfo, fmSlideNextGif } = require('../services/fileManager.js')
 const { colors } = require('../config.js');
-const fs = require('fs');
 
 
 const postGif = () => {
     return "Coming soon!"
 }
 
-const getCurrentGif = async () => {
-    const [currentlyDisplayed] = fs.readdirSync('../display/assets/displayed').filter(() => /\.gif$/);
-    if (!currentlyDisplayed) {
-        const [nextGif] = fs.readdirSync('../display/assets/gifs', 'utf8').filter(() => /\.gif$/);
-        const newDisplayPath = `../display/assets/displayed/${nextGif}`
-        fs.copyFileSync(`../display/assets/gifs/${nextGif}`, newDisplayPath);
-        [currentlyDisplayed] = fs.readdirSync('../display/assets/displayed/').filter(() => /\.gif$/);
-    }
-    const gif = fs.readFileSync(`../display/assets/displayed/${currentlyDisplayed}`);
-    const {width, height} = getGIFDimensions(gif);
-
+const getCurrentGifInfo = async () => {
+    const {gif, width, height} = await fmCurrentGifInfo();
+    console.log(colors.green, "Current GIF info: ", {gif, width, height});
     return JSON.stringify({
-        gif: currentlyDisplayed,
+        gif,
         width,
         height
     });
 }
 
-const getNextGif = async () => {
-    const [currentlyDisplayed] = fs.readdirSync('../display/assets/displayed').filter(() => /\.gif$/);
-    const gifs = fs.readdirSync('../display/assets/gifs', 'utf8').filter(() => /\.gif$/);
-    let [nextGif] = gifs;
-    if (currentlyDisplayed) {
-        const index = gifs.indexOf(currentlyDisplayed);
-        nextGif = gifs[(index + 1) % gifs.length];
-        await deleteFile(`../display/assets/displayed/${currentlyDisplayed}`);
-    }
-    const newDisplayPath = `../display/assets/displayed/${nextGif}`
-    fs.copyFileSync(`../display/assets/gifs/${nextGif}`, newDisplayPath);
-    const gif = fs.readFileSync(newDisplayPath);
-
-    return gif;
+const getNextGifBin = async () => {
+    const { gifBin } = await fmSlideNextGif();
+    return gifBin;
 }
 
 const postGifHandler = endpointMiddleware(postGif)(201, 'text/html');
-const getNextGifHandler = endpointMiddleware(getNextGif)(200, 'image/gif');
-const getCurrentGifHandler = endpointMiddleware(getCurrentGif)(200, 'text/html');
+const getNextGifBinHandler = endpointMiddleware(getNextGifBin)(200, 'image/gif');
+const getCurrentGifHandler = endpointMiddleware(getCurrentGifInfo)(200, 'text/html');
 
 const router = {
     post: {
         "/gif": postGifHandler,
     },
     get: {
-        "/next": getNextGifHandler,
+        "/next": getNextGifBinHandler,
         "/current": getCurrentGifHandler,
     }
 }
