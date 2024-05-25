@@ -4,7 +4,7 @@
 1. [Description](#description-eyes)
 2. [Setup Guide](#setup-guide-gear)
     - [OS Instructions](#os-instructions-penguin)
-    - [Running the Server](#running-the-server-laptop)
+    - [Running the Server](#running-the-server-)
     - [Setting a URL](#setting-a-url-globe_with_meridians)
 3. [Weaknesses](#weaknesses-)
 4. [Next Steps](#next-steps-memo)
@@ -35,7 +35,7 @@ git clone https://github.com/nfragav/showgify.js.git
 
 For your preferred OS, you just have to install `node.js` following [this guide](https://nodejs.org/en/download/package-manager).
 
-### Running the Server :laptop:
+### Running the Server 💻
 
 You just move to the `server/` folder at this repo
 
