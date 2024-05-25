@@ -30,7 +30,6 @@ const alterDOM = async () => {
   fetch('http://localhost:3000/current').then(
     async res => {
       const { gif, width, height } = await res.json();
-      console.log(width, height);
 
       const screenDimensions = [window.innerWidth, window.innerHeight];
       const gifDimensions = [width, height];

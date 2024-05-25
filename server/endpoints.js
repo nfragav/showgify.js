@@ -9,7 +9,6 @@ const postGif = () => {
 
 const getCurrentGifInfo = async () => {
     const {gif, width, height} = await fmCurrentGifInfo();
-    console.log(colors.green, "Current GIF info: ", {gif, width, height});
     return JSON.stringify({
         gif,
         width,
