@@ -31,6 +31,8 @@ First off, you must clone this repo
 git clone https://github.com/nfragav/showgify.js.git
 ~~~
 
+Now, to install the software according to your OS.
+
 ### OS Instructions :penguin:
 
 For your preferred OS, you just have to install `node.js` following [this guide](https://nodejs.org/en/download/package-manager).
@@ -55,25 +57,18 @@ Then, you open the `display/index.html` file. You'll be displaying the GIFs. The
 
 ### Setting a URL :globe_with_meridians:
 
-To lift in an easy way a URL, you can use Visual Studio Code's port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
-
-All you need to *showgify* is installing into your computer `Node v22.0` and have a general purpose browser to manually show the `index.html` file at the `display/` folder. Also, if you're keen on controlling the display through a browser, installing `VSCode` will surely do it. Whereas, the instructions are the following, for each OS:
+To be a true showgifier, you must be able to slide through GIFs in your smartphone. For this, lifting a URL will come handy. To lift in an easy way a URL, you can use Visual Studio Code's port forwarding feature for local services. You just [install Visual Studio Code](https://code.visualstudio.com/download) and follow [this guide](https://code.visualstudio.com/docs/editor/port-forwarding). Take into account that the `npx serve` command being used is the same as running this project's server.
 
 ## Features and [API documentation](docs/api_documentation.md) :page_facing_up:
 
 Given that for the moment this is a little project, the API documentation will be shown in [a file in this same repository](docs/api_documentation.md).
 
-For the moment, this project consists in a single-direction slider of GIFs via an HTML file. The project includes a server that provides an API the following urls: `/next`, `/current`. With these functions, you can get the name of the current GIF file being displayed and command the server to slide to the next GIF, changing the file displayed at `display/index.html`.
+For the moment, this project consists in a display of GIFs via an HTML file, controlled through a slider in a web API. The project includes a server that provides an API with the following urls: `/current`, `/previous` and `/next`. With these functions, you can get the name of the current GIF file being displayed, command the server to slide to the previous GIF in `display/gifs` folder and also command the server to slide to the next one. These two last features will change the file displayed at `display/index.html`.
 
 ## Weaknesses 📉
 
 The weaknesses that could be tackled to make this project better are the following:
-- Needs a browser to open `display/index.html` file. It could possibly be solver by installing a low-demanding browser or adding a visual feature via `node`. Any solution must be reached without using `npm` or any package manager of node.
+- Needs a browser to open `display/index.html` file. It could possibly be solved by installing a low-demanding browser or adding a visual feature via `node`. Any solution must be reached without using `npm` or any package manager of node.
 - Project could be achieved with less hardware than a computer.
 - Security issues regarding URL haven't been addressed.
-- It requires managing a URL, which can complicate things. Other technologies such as Bluetooth could achieve the same purpose.
-
-## Next Steps :memo:
-
-- Find a cheap board compatible with a decent size display to make the setup of the project.
-- Create a `/previous` method to slide to the previous GIF of the list, at `display/gifs/` folder.
+- It requires managing a URL and using HTTP, which can make things complicated. Other technologies such as Bluetooth could achieve the same purpose in a more local way, without exposing your computer.
