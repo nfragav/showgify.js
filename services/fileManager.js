@@ -34,7 +34,6 @@ const fmCurrentGifInfo = async () => {
         [currentlyDisplayed] = fs.readdirSync(dirs.displayed).filter(() => /\.gif$/);
     }
     const gif = currentlyDisplayed;
-    console.log(`${dirs.displayed}${gif}`);
     const gifBin = fs.readFileSync(`${dirs.displayed}${gif}`);
     const {width, height} = getGIFDimensions(gifBin);
     return {gif, width, height}
@@ -50,7 +49,7 @@ const fmSlideNextGif = async () => {
       await deleteFile(`${dirs.displayed}${currentlyDisplayed}`);
   }
   fs.copyFileSync(`${dirs.gifs}${nextGif}`, `${dirs.displayed}${nextGif}`);
-  const gifBin = fs.readFileSync(newDisplayPath);
+  const gifBin = fs.readFileSync(`${dirs.displayed}${nextGif}`);
 
   return { gifBin };
 }
