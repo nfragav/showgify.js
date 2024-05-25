@@ -8,19 +8,30 @@ Welcome to the Showgify.js API documentation. This API allows you to interact wi
 
 ### Description
 
-Retrieve the next GIF that will be displayed by the slider. The slider will show the gif in 10 seconds or less.
+Fetch the name of the current GIF being displayed by the HTML file. Used mainly at `display/app.js` to know the name of the file at `display/assets/displayed/`
 
 ### Response
+- **Content-Type:** `text/html`
+- **Body:** The name of the currently displayed GIF file.
+
+## `GET /previous`
+
+### Description
+
+Make the `display/index.html` file display previous GIF in the folder `display/assets/gifs/`. It returns the binary of the GIF file. The slider will show the GIF in 10 seconds or less.
+
+### Response:
+
 - **Content-Type:** `image/gif`
-- **Body:** The binary data of the next GIF image.
+- **Body:** The binary data of the previous GIF image from the folder `display/assets/gifs/`.
 
 ## `GET /next`
 
 ### Description
 
-Fetch the name of the currently displayed GIF. Used mainly by `/display/app.js` script.
+Make the `display/index.html` file display next GIF in the folder `display/assets/gifs/`. It returns the binary of the GIF file. The slider will show the GIF in 10 seconds or less.
 
 ### Response:
 
-- **Content-Type:** `text/html`
-- **Body:** The name of the current GIF as a plain text string.
+- **Content-Type:** `image/gif`
+- **Body:** The binary data of the next GIF image from the folder `display/assets/gifs/`.
