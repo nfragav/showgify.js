@@ -40,6 +40,7 @@ const router = {
 
 const routerMiddleware = (method, url) => async (req, res) => {
     try {
+        console.log(req.socket)
         console.log(colors.magenta, "\nreceived request: ", method, url);
         const endpoint = router[method.toLowerCase()][url];
         const output = await endpoint(req, res);
